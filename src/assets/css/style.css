@@ -1,0 +1,19 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 16px;
+  background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 163));
+  min-height: 100%;
+}
+
+.temperature-container {
+  display: flex;
+}
