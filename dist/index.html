@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Weather app</title>
+  <link rel="stylesheet" type="text/css" href="../src/assets/css/style.css">
 </head>
+
 <body>
+  <section class="input-section">
+    <div class="container">
+      <h1 class="heading">Simple Weather App</h1>
+      <form id="locationForm">
+        <input class="form-control city-input" type="text" placeholder="Search for a city" autofocus>
+        <button type="submit">SUBMIT</button>
+        <span class="msg"></span>
+      </form>
+    </div>
+  </section>
+  <section class="weather-info-section">
+    <div class="container">
+      <div class="location">
+        <span class="city"></span>
+        <sup>
+          <span class="country"></span>
+        </sup>
+      </div>
+      <div class="temperature-container">
+        <div class="temp">
+          <span class="temperature-value"></span>
+          <span class="temperature-unit"><sup>o</sup>C</span>
+        </div>
+        <div class="unit-toggler">
+          <span class="toggle">F</span>
+          <span class="toggle">C</span>
+        </div>
+      </div>
+      <div class="weather-icon">
+        <img src="#" alt="weather icon" class="icon">
+      </div>
+      <p class="weather-description"></p>
+    </div>
+  </section>
+  <footer class="page-footer">
+    <div class="container">
+  
+    </div>
+  </footer>
   <script src="./main.js"></script>
 </body>
+
 </html>
