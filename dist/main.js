@@ -1,17 +1,1 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is not neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
-/******/ (() => { // webpackBootstrap
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/*! unknown exports (runtime-defined) */
-/*! runtime requirements:  */
-eval("console.log('Hello, World!')\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
-/******/ })()
-;
+(()=>{"use strict";const e={cityEl:document.querySelector(".city"),countryEl:document.querySelector(".country"),tempValueEl:document.querySelector(".temperature-value"),tempUnitEl:document.querySelector(".temperature-unit"),weatherIconEl:document.querySelector(".icon"),weatherDescriptionEl:document.querySelector(".weather-description")},t="weather.info",n=JSON.parse(localStorage.getItem(t))||{},o=o=>{(async function(e){try{const t=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${e}&units=metric&appid=a3a3c872c3aed550e72581047c492050`);return await t.json()}catch(e){return e.message}})(o).then((o=>{o.sys?(n.cod=o.cod,n.city=o.name,n.country=o.sys.country,n.temp=o.main.temp,n.description=o.weather[0].description,n.icon=`http://openweathermap.org/img/wn/${o.weather[0].icon}.png`,console.log(n),localStorage.setItem(t,JSON.stringify(n)),e.cityEl.textContent=n.city,e.countryEl.textContent=n.country,e.tempValueEl.textContent=`${n.temp}°C`,e.weatherDescriptionEl.textContent=n.description,e.weatherIconEl.src=n.icon):console.log(o.message)}))};o("Tema");const r=document.getElementById("locationForm");r.addEventListener("submit",(e=>{e.preventDefault();const t=r.querySelector(".form-control.city-input").value;o(t),r.reset()})),document.querySelector(".unit-toggler").addEventListener("click",(t=>{(t=>{if("fahrenheit"===t){const t=(9*parseFloat(n.temp)/5+32).toFixed(2);e.tempValueEl.innerHTML=`${t}°F`}else e.tempValueEl.textContent=`${n.temp}°C`})(t.target.dataset.target)}))})();
