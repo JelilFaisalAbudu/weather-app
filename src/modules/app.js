@@ -30,8 +30,9 @@ const displayWeatherInfoFor = (city) => {
         weatherInfoElements.tempValueEl.textContent = `${weatherInfo.temp}\xb0C`;
         weatherInfoElements.weatherDescriptionEl.textContent = weatherInfo.description;
         weatherInfoElements.weatherIconEl.src = weatherInfo.icon;
+        weatherInfoElements.searchErrorEl.textContent = '';
       } else {
-        weatherInfoElements.weatherInfoContainerEl.textContent = weatherData.message;
+        weatherInfoElements.searchErrorEl.textContent = weatherData.message;
       }
     });
 };

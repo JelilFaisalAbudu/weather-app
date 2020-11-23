@@ -5,10 +5,10 @@ const weatherInfoEl = () => {
   const tempUnitEl = document.querySelector('.temperature-unit');
   const weatherIconEl = document.querySelector('.icon');
   const weatherDescriptionEl = document.querySelector('.weather-description');
-  const weatherInfoContainerEl = document.querySelector('.weather-info-section > .container');
+  const searchErrorEl = document.querySelector('.error-msg');
 
   return {
-    weatherInfoContainerEl,
+    searchErrorEl,
     cityEl,
     countryEl,
     tempValueEl,

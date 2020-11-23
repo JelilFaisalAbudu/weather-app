@@ -17,3 +17,8 @@ body {
 .temperature-container {
   display: flex;
 }
+
+.error-msg {
+  background-color: brown;
+  text-align: center;
+}
