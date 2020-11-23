@@ -3,11 +3,11 @@ import weatherInfoElements from './dom';
 const LOCAL_STORAGE_WEATHER_INFO = 'weather.info';
 const weatherInfo = JSON.parse(localStorage.getItem(LOCAL_STORAGE_WEATHER_INFO)) || {};
 
-const WEATHER_APP_API_KEY = 'a3a3c872c3aed550e72581047c492050';
+const envVariables = process.env.WEATHER_APP_API_KEY;
 
 async function fetchWeatherDataFor(city) {
   try {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${WEATHER_APP_API_KEY}`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${envVariables}`);
     return await response.json();
   } catch (err) {
     return err.message;
