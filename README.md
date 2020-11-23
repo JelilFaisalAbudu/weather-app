@@ -2,7 +2,7 @@
 
 > A simple weather app retrieves the weather information about a given city.
 
-![screenshot](./src/assets/images/screenshot.png)
+![screenshot](./src/assets/images/screenhot.png)
 
 The user looks for the current weather update of a city by entering the city name into a search form.
 The result is then retrieve using the Open Weather API.
