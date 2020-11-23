@@ -1,25 +1,7 @@
-// import domObjects from './dom';
+import weatherInfoElements from './dom';
 
-const dom = () => {
-  const cityEl = document.querySelector('.city');
-  const countryEl = document.querySelector('.country');
-  const tempValueEl = document.querySelector('.temperature-value');
-  const tempUnitEl = document.querySelector('.temperature-unit');
-  const weatherIconEl = document.querySelector('.icon');
-  const weatherDescriptionEl = document.querySelector('.weather-description');
-
-  return {
-    cityEl,
-    countryEl,
-    tempValueEl,
-    tempUnitEl,
-    weatherIconEl,
-    weatherDescriptionEl,
-  };
-};
-
-const weatherInfoElements = dom();
-
+const LOCAL_STORAGE_WEATHER_INFO = 'weather.info';
+const weatherInfo = JSON.parse(localStorage.getItem(LOCAL_STORAGE_WEATHER_INFO)) || {};
 
 const WEATHER_APP_API_KEY = 'a3a3c872c3aed550e72581047c492050';
 
@@ -32,25 +14,41 @@ async function fetchWeatherDataFor(city) {
   }
 }
 
-
 const displayWeatherInfoFor = (city) => {
   fetchWeatherDataFor(city)
     .then(weatherData => {
       if (weatherData.sys) {
-        console.log(weatherData);
-        weatherInfoElements.cityEl.textContent = weatherData.name;
-        weatherInfoElements.countryEl.textContent = weatherData.sys.country;
-        weatherInfoElements.tempValueEl.textContent = weatherData.main.temp;
-        weatherInfoElements.weatherDescriptionEl.textContent = weatherData.weather[0].description;
-        weatherInfoElements.weatherIconEl.src = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`;
+        weatherInfo.cod = weatherData.cod;
+        weatherInfo.city = weatherData.name;
+        weatherInfo.country = weatherData.sys.country;
+        weatherInfo.temp = weatherData.main.temp;
+        weatherInfo.description = weatherData.weather[0].description;
+        weatherInfo.icon = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`;
+        console.log(weatherInfo);
+        localStorage.setItem(LOCAL_STORAGE_WEATHER_INFO, JSON.stringify(weatherInfo));
+        weatherInfoElements.cityEl.textContent = weatherInfo.city;
+        weatherInfoElements.countryEl.textContent = weatherInfo.country;
+        weatherInfoElements.tempValueEl.textContent = `${weatherInfo.temp}\xb0C`;
+        weatherInfoElements.weatherDescriptionEl.textContent = weatherInfo.description;
+        weatherInfoElements.weatherIconEl.src = weatherInfo.icon;
       } else {
         console.log(weatherData.message);
       }
     });
 };
 
-const convertTemperature = () => {
-  
-}
+const convertTemperature = (unit) => {
 
-export default displayWeatherInfoFor;
+  if (unit === 'fahrenheit') {
+    const value = parseFloat(weatherInfo.temp);
+    const fahrenheit = ((value * 9) / 5 + 32).toFixed(2);
+    weatherInfoElements.tempValueEl.innerHTML = `${fahrenheit}\xb0F`;
+  } else {
+    weatherInfoElements.tempValueEl.textContent = `${weatherInfo.temp}\xb0C`;
+  }
+};
+
+export {
+  displayWeatherInfoFor,
+  convertTemperature
+};
