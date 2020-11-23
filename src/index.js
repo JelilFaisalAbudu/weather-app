@@ -12,6 +12,11 @@ weatherFormEl.addEventListener('submit', (e) => {
 
 const elToggle = document.querySelector('.unit-toggler');
 elToggle.addEventListener('click', (e) => {
-  const dataUnit = e.target.dataset.target;
+  const switchBtns = elToggle.querySelectorAll('.switch-active');
+  switchBtns.forEach(btn => {
+    btn.classList.remove('switch-active');
+  });
+  e.target.classList.add('switch-active');
+  const dataUnit = e.target.dataset.switch;
   convertTemperature(dataUnit);
 });

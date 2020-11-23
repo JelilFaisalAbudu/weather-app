@@ -16,9 +16,25 @@ body {
 
 .temperature-container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .error-msg {
   background-color: brown;
   text-align: center;
+}
+
+.unit-toggler {
+  display: flex;
+  align-items: flex-end;
+}
+
+.switch-btn {
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+.switch-active {
+  background-color: aqua;
 }
