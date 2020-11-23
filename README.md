@@ -1,74 +1,52 @@
-# Project Name
+# Weather App
 
-> One paragraph statement about the project.
+> A simple weather app retrieves the weather information about a given city.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./src/assets/images/screenhot.png)
 
-Additional description about the project and its features.
+The user looks for the current weather update of a city by entering the city name into a search form.
+The result is then retrieve using the Open Weather API.
+
 
 ## Built With
 
-- Major languages,
-- frameworks,
-- technologies used
+- JavaScript
+- ESLint
+- StyleLint
+- WebPack
+- OpenWeatherMapAPI
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://raw.githack.com/JelilFaisalAbudu/weather-app/feature/dist/index.html)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To get a local copy of the repository please run the following commands on your terminal:
 
+```bash
+$ git clone https://github.com/JelilFaisalAbudu/weather-app.git
+$ cd weather-app
+$ npm install
+```
 
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+- Install and open with live server VsCode extension.
 
 ## Authors
 
-👤 **Author1**
+👤 Jelil Faisal Abudu
 
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
-
-👤 **Author2**
-
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+* Github: [JelilFaisalAbudu](https://github.com/JelilFaisalAbudu)
+* Twitter: [@jelilabudu](https://twitter.com/jelilabudu)
+* Linkedin: [jelilfaisalabudu](www.linkedin.com/in/jelilfaisalabudu)
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/JelilFaisalAbudu/twitter-redesign/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](lic.url) licensed.

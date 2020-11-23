@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather app</title>
+  <link rel="stylesheet" type="text/css" href="../src/assets/css/style.css">
+</head>
+
+<body>
+  <section class="input-section">
+    <div class="container">
+      <h1 class="heading">Simple Weather App</h1>
+      <form id="locationForm">
+        <input class="form-control city-input" type="text" placeholder="Search for a city" autofocus>
+        <button type="submit">SUBMIT</button>
+        <p class="error-msg"></p>
+      </form>
+    </div>
+  </section>
+  <section class="weather-info-section">
+    <div class="container">
+      <div class="location">
+        <span class="city"></span>
+        <sup>
+          <span class="country"></span>
+        </sup>
+      </div>
+      <div class="temperature-container">
+        <div class="temp">
+          <span class="temperature-value"></span>
+        </div>
+        <div class="unit-toggler">
+          <button class="switch-btn switch-active" data-switch="celsius">
+            &#176;C
+          </button>
+          <button class="switch-btn" data-switch="fahrenheit">
+            &#176;F
+          </button>
+        </div>
+      </div>
+      <div class="weather-icon">
+        <img src="#" alt="weather icon" class="icon">
+      </div>
+      <p class="weather-description"></p>
+    </div>
+  </section>
+  <footer class="page-footer">
+    <div class="container">
+  
+    </div>
+  </footer>
+  <script src="./main.js"></script>
+</body>
+
+</html>
