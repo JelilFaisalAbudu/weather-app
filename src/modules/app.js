@@ -24,7 +24,6 @@ const displayWeatherInfoFor = (city) => {
         weatherInfo.temp = weatherData.main.temp;
         weatherInfo.description = weatherData.weather[0].description;
         weatherInfo.icon = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`;
-        console.log(weatherInfo);
         localStorage.setItem(LOCAL_STORAGE_WEATHER_INFO, JSON.stringify(weatherInfo));
         weatherInfoElements.cityEl.textContent = weatherInfo.city;
         weatherInfoElements.countryEl.textContent = weatherInfo.country;
@@ -32,13 +31,12 @@ const displayWeatherInfoFor = (city) => {
         weatherInfoElements.weatherDescriptionEl.textContent = weatherInfo.description;
         weatherInfoElements.weatherIconEl.src = weatherInfo.icon;
       } else {
-        console.log(weatherData.message);
+        weatherInfoElements.weatherInfoContainerEl.textContent = weatherData.message;
       }
     });
 };
 
 const convertTemperature = (unit) => {
-
   if (unit === 'fahrenheit') {
     const value = parseFloat(weatherInfo.temp);
     const fahrenheit = ((value * 9) / 5 + 32).toFixed(2);
@@ -50,5 +48,5 @@ const convertTemperature = (unit) => {
 
 export {
   displayWeatherInfoFor,
-  convertTemperature
+  convertTemperature,
 };
